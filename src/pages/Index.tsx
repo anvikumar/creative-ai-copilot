@@ -2,7 +2,7 @@ import { useState } from "react"
 import { HeroSection } from "@/components/hero-section"
 import { CampaignInput, CampaignData } from "@/components/campaign-input"
 import { AIProcessing } from "@/components/ai-processing"
-import { CampaignResults } from "@/components/campaign-results"
+import { VisualPostGenerator } from "@/components/visual-post-generator"
 
 type AppState = "hero" | "input" | "processing" | "results"
 
@@ -34,7 +34,7 @@ const Index = () => {
       {currentState === "input" && <CampaignInput onGenerate={handleGenerateCampaign} />}
       {currentState === "processing" && <AIProcessing onComplete={handleProcessingComplete} />}
       {currentState === "results" && campaignData && (
-        <CampaignResults campaignData={campaignData} onNewCampaign={handleNewCampaign} />
+        <VisualPostGenerator campaignData={campaignData} onNewCampaign={handleNewCampaign} />
       )}
     </div>
   )
