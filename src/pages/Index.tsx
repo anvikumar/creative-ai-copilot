@@ -1,14 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react"
+import { HeroSection } from "@/components/hero-section"
+import { CampaignInput, CampaignData } from "@/components/campaign-input"
+import { AIProcessing } from "@/components/ai-processing"
+import { CampaignResults } from "@/components/campaign-results"
+
+type AppState = "hero" | "input" | "processing" | "results"
 
 const Index = () => {
+  const [currentState, setCurrentState] = useState<AppState>("hero")
+  const [campaignData, setCampaignData] = useState<CampaignData | null>(null)
+
+  const handleGetStarted = () => {
+    setCurrentState("input")
+  }
+
+  const handleGenerateCampaign = (data: CampaignData) => {
+    setCampaignData(data)
+    setCurrentState("processing")
+  }
+
+  const handleProcessingComplete = () => {
+    setCurrentState("results")
+  }
+
+  const handleNewCampaign = () => {
+    setCampaignData(null)
+    setCurrentState("input")
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {currentState === "hero" && <HeroSection onGetStarted={handleGetStarted} />}
+      {currentState === "input" && <CampaignInput onGenerate={handleGenerateCampaign} />}
+      {currentState === "processing" && <AIProcessing onComplete={handleProcessingComplete} />}
+      {currentState === "results" && campaignData && (
+        <CampaignResults campaignData={campaignData} onNewCampaign={handleNewCampaign} />
+      )}
     </div>
-  );
+  )
 };
 
 export default Index;
