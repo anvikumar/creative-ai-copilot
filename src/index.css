@@ -4,44 +4,63 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    --background: 0 0% 99%;
+    --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 222.2 84% 4.9%;
     --primary: 260 100% 65%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 260 20% 96%;
-    --secondary-foreground: 260 50% 20%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 260 20% 96%;
-    --accent-foreground: 260 50% 20%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
     --ring: 260 100% 65%;
 
-    /* Chat-specific colors */
-    --agent-bg: 0 0% 98%;
-    --agent-text: 0 0% 20%;
-    --user-bg: 260 100% 65%;
-    --user-text: 0 0% 100%;
-    --agent-icon: 260 80% 70%;
+    /* Campaign-specific colors */
+    --creative: 280 100% 70%;
+    --creative-foreground: 0 0% 100%;
+    
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
 
-    --radius: 0.75rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(260 100% 65%), hsl(280 100% 70%));
+    --gradient-creative: linear-gradient(135deg, hsl(280 100% 70%), hsl(300 100% 75%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 99%), hsl(220 14.3% 95.9%));
+
+    /* Shadows */
+    --shadow-creative: 0 10px 40px -10px hsl(260 100% 65% / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsla(220, 12%, 86%, 0.8);
+
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
